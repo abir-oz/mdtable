@@ -1,4 +1,4 @@
-import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import { MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import React, { useEffect, useState } from 'react';
 
 const TablePage = () => {
@@ -11,13 +11,27 @@ const TablePage = () => {
             .then((data) => setUsers(data));
     }, [url]);
 
-    const userList = users.map((user) => ({
-        id: user.id,
-        heading1: user.name,
-        heading2: user.email,
-        heading3: user.phone,
-        heading4: user.website,
-    }));
+    const handelClick = (e) => {
+        console.log('Clicked', e.target);
+    };
+
+    const userList = users.map((user) => {
+        const heading5 = (
+            <MDBBtn onClick={handelClick} color="danger">
+                Delete
+            </MDBBtn>
+        );
+        const userData = {
+            id: user.id,
+            heading1: user.name,
+            heading2: user.email,
+            heading3: user.phone,
+            heading4: user.website,
+            heading5,
+        };
+
+        return userData;
+    });
 
     const data = {
         columns: [
@@ -44,6 +58,11 @@ const TablePage = () => {
             {
                 label: 'Website',
                 field: 'heading4',
+                sort: 'asc',
+            },
+            {
+                label: 'Manage',
+                field: 'heading5',
                 sort: 'asc',
             },
         ],
