@@ -1,4 +1,4 @@
-import { MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import { MDBBtn, MDBDataTable } from 'mdbreact';
 import React, { useEffect, useState } from 'react';
 
 const TablePage = () => {
@@ -72,12 +72,14 @@ const TablePage = () => {
     return (
         <>
             <h2 className="text-center mt-5">
-                <u>Table Page</u>
+                <u>Striped Table</u>
             </h2>
-            <MDBTable responsive>
+
+            <MDBDataTable striped bordered data={data} />
+            {/* <MDBTable responsive>
                 <MDBTableHead columns={data.columns} />
                 <MDBTableBody rows={data.rows} />
-            </MDBTable>
+            </MDBTable> */}
         </>
     );
 };
