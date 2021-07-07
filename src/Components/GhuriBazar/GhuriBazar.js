@@ -1,6 +1,6 @@
 // import { MDBDataTable } from 'mdbreact';
 import axios from 'axios';
-import { MDBDataTable } from 'mdbreact';
+import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import React, { useEffect, useState } from 'react';
 
 const GhuriBazar = () => {
@@ -59,7 +59,11 @@ const GhuriBazar = () => {
                 <u>Ghuri Bazar</u>
             </h2>
 
-            <MDBDataTable responsive striped bordered data={data} />
+            {/*   <MDBDataTable responsive striped bordered data={data} /> */}
+            <MDBTable responsive>
+                <MDBTableHead columns={data.columns} />
+                <MDBTableBody rows={data.rows} />
+            </MDBTable>
         </>
     );
 };
