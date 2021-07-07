@@ -23,7 +23,7 @@ const GhuriBazar = () => {
         const tableData = {
             shopId: shop.shopID,
             ownerName: shop.ownerName,
-            productTitle: products[index].productTitle,
+            productTitle: products[index]?.productTitle,
         };
         allMerged.push(tableData);
     });
