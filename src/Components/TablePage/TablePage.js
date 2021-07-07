@@ -21,7 +21,7 @@ const TablePage = () => {
         const selectedGender = e.target.value;
         setGender(selectedGender);
     };
-    console.log(gender);
+    // console.log(gender);
 
     const userList = users.map((user, index) => {
         const heading6 = (
@@ -48,8 +48,10 @@ const TablePage = () => {
     });
     let userFiltered;
     if (gender) {
-        userFiltered = userList.filter((user) => user.heading2 === gender);
-        console.log(userFiltered);
+        userFiltered = userList.filter(
+            (user) => user.heading2.toLowerCase() === gender.toLowerCase()
+        );
+        // console.log(userFiltered);
     }
 
     const data = {

@@ -16,7 +16,7 @@ const BasicTable = () => {
             <h2 className="text-center mt-5">
                 <u>Basic Table</u>
             </h2>
-            <MDBTable>
+            <MDBTable responsive>
                 <MDBTableHead color="primary-color" textWhite>
                     <tr>
                         <th>#</th>
